@@ -870,7 +870,20 @@ document.querySelectorAll('#color-select .btn-opt').forEach(btn => {
   });
 });
 
+const confirmModal = document.getElementById('confirm-modal');
+const modalCancel = document.getElementById('modal-cancel');
+const modalConfirm = document.getElementById('modal-confirm');
+
 document.getElementById('btn-reset').addEventListener('click', () => {
+  confirmModal.classList.add('visible');
+});
+
+modalCancel.addEventListener('click', () => {
+  confirmModal.classList.remove('visible');
+});
+
+modalConfirm.addEventListener('click', () => {
+  confirmModal.classList.remove('visible');
   initBoard();
   setStatus('');
   renderBoard();
@@ -878,6 +891,12 @@ document.getElementById('btn-reset').addEventListener('click', () => {
   // If AI goes first
   if (currentTurn === aiColor) {
     aiMove();
+  }
+});
+
+confirmModal.addEventListener('click', (e) => {
+  if (e.target === confirmModal) {
+    confirmModal.classList.remove('visible');
   }
 });
 
