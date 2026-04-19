@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Chess</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="scene">
+    <h1 class="title">3D Chess</h1>
+
+    <div class="controls">
+      <div class="control-group">
+        <span class="control-label">Difficulty</span>
+        <div class="btn-group" id="difficulty-select">
+          <button class="btn-opt" data-val="easy">Easy</button>
+          <button class="btn-opt active" data-val="medium">Medium</button>
+          <button class="btn-opt" data-val="hard">Hard</button>
+        </div>
+      </div>
+      <div class="control-group">
+        <span class="control-label">Play as</span>
+        <div class="btn-group" id="color-select">
+          <button class="btn-opt active" data-val="white">White</button>
+          <button class="btn-opt" data-val="black">Black</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-bar">
+      <div class="turn-indicator" id="turn-indicator">White's Turn</div>
+      <div class="ai-indicator" id="ai-indicator">
+        <span class="spinner"></span>
+        AI thinking...
+      </div>
+      <div class="status" id="status"></div>
+    </div>
+
+    <div class="board-wrapper">
+      <div class="board" id="board"></div>
+      <div class="board-shadow"></div>
+    </div>
+
+    <div class="captured">
+      <div class="captured-row">
+        <span class="captured-label">White captured:</span>
+        <span id="captured-white" class="captured-pieces"></span>
+      </div>
+      <div class="captured-row">
+        <span class="captured-label">Black captured:</span>
+        <span id="captured-black" class="captured-pieces"></span>
+      </div>
+    </div>
+
+    <button class="btn-reset" id="btn-reset">New Game</button>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>
